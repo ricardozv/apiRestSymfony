@@ -16,7 +16,9 @@ class routerOne
     public function routerOne(Request $request) : Response
 
     {
-        return new JsonResponse([ 'mensagem' => 'Tranformando em formato Json']);
+        $pathInfo = $request -> getPathInfo();
+        return new JsonResponse([ 'mensagem' => 'Tranformando em formato Json',
+        'pathInfo' => $pathInfo]);
 
     }
 }
